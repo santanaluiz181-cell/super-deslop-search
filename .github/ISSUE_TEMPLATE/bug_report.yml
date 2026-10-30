@@ -1,0 +1,47 @@
+name: Bug Report
+description: Report a false positive in the slop classifier, a broken engine dork, or a CLI defect
+title: "[BUG]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a report to keep `deslop-search` fast, reliable, and clean!
+  - type: input
+    id: query
+    attributes:
+      label: Search Query or URL
+      description: What exact search query or URL triggered the issue?
+      placeholder: e.g. "postgres vacuum wraparound" or "https://example.com/post"
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected Component
+      options:
+        - "Split-Horizon Engine"
+        - "Temporal Dork Engine"
+        - "Slop Classifier (False Positive: marked authentic code as slop)"
+        - "Slop Classifier (False Negative: missed AI slop)"
+        - "Blocklist / Sources JSON"
+        - "Node / TypeScript CLI"
+        - "Python CLI & Library"
+        - "MCP Agent Tools"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should have happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Output / Error Trace
+      description: Paste terminal output, score, or error message here.
+      render: shell
+    validations:
+      required: true

@@ -1,0 +1,115 @@
+{
+  "version": "1.0.0",
+  "description": "Curated blocklist of AI content farms, scraper mirrors, fake machine-translated documentation clones, and low-signal SEO mills.",
+  "engineOperatorLimits": {
+    "google": 32,
+    "duckduckgo": 24,
+    "brave": 28,
+    "kagi": 32,
+    "searxng": 30,
+    "bing": 24
+  },
+  "categories": {
+    "scraper_mirrors": {
+      "priority": 1,
+      "description": "Automated StackOverflow/GitHub scrapers and fake documentation aggregators",
+      "domains": [
+        "copyprogramming.com",
+        "codegrepper.com",
+        "gitmemory.com",
+        "issueexplorer.com",
+        "fantashit.com",
+        "answerbun.com",
+        "fixes.pub",
+        "py4u.net",
+        "folkstalk.com",
+        "coderslegacy.com",
+        "itsourcecode.com",
+        "sourcecodester.com",
+        "tutorialcup.com",
+        "AskPython.com"
+      ]
+    },
+    "translation_clones": {
+      "priority": 1,
+      "description": "Machine-translated scraper farms cloning GitHub issues and Q&A threads across locales",
+      "domains": [
+        "stackoom.com",
+        "programmersought.com",
+        "titanwolf.org",
+        "oomake.com",
+        "uwenku.com",
+        "codetd.com",
+        "vipshare.com",
+        "thinbug.com",
+        "iter01.com",
+        "voidcc.com",
+        "ichi.pro",
+        "qastack.com.br",
+        "qa-stack.pl",
+        "coderoad.ru",
+        "it-swarm.dev",
+        "respostas.guj.com.br"
+      ]
+    },
+    "seo_content_mills": {
+      "priority": 2,
+      "description": "High-volume ad-driven tutorial mills and synthetic SEO rewrite farms",
+      "domains": [
+        "geeksforgeeks.org",
+        "w3schools.com",
+        "tutorialspoint.com",
+        "javatpoint.com",
+        "educba.com",
+        "programiz.com",
+        "simplilearn.com",
+        "mygreatlearning.com",
+        "scaler.com",
+        "interviewbit.com",
+        "guru99.com",
+        "upgrad.com",
+        "intellipaat.com",
+        "edureka.co",
+        "linuxhint.com",
+        "delftstack.com",
+        "baeldung.com/ops",
+        "howtogeek.com",
+        "makeuseof.com",
+        "zapier.com/blog",
+        "hubspot.com/blog"
+      ]
+    },
+    "ai_slop_farms": {
+      "priority": 1,
+      "description": "Known post-2022 synthetic article networks and programmatic SEO directories",
+      "domains": [
+        "toolify.ai",
+        "theresanaiforthat.com",
+        "aitoolsdirectory.com",
+        "futurepedia.io",
+        "marktechpost.com",
+        "analyticsindiamag.com",
+        "unite.ai",
+        "cryptopolitan.com",
+        "beincrypto.com",
+        "watcher.guru",
+        "finbold.com",
+        "techopedia.com"
+      ]
+    }
+  },
+  "defaultInlineExclusions": [
+    "copyprogramming.com",
+    "codegrepper.com",
+    "stackoom.com",
+    "programmersought.com",
+    "geeksforgeeks.org",
+    "tutorialspoint.com",
+    "javatpoint.com",
+    "delftstack.com",
+    "educba.com",
+    "qastack.com.br",
+    "gitmemory.com",
+    "linuxhint.com"
+  ]
+}

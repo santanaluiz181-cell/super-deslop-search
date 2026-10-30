@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d14"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#05070a"/>
+    </linearGradient>
+    <linearGradient id="brand-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="canon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="contemp-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#6d28d9" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="diff-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="50%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="420" rx="16" fill="url(#bg-grad)"/>
+  <rect width="1200" height="420" rx="16" fill="none" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Subtle grid pattern -->
+  <g stroke="#334155" stroke-opacity="0.15" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="420"/>
+    <line x1="300" y1="0" x2="300" y2="420"/>
+    <line x1="500" y1="0" x2="500" y2="420"/>
+    <line x1="700" y1="0" x2="700" y2="420"/>
+    <line x1="900" y1="0" x2="900" y2="420"/>
+    <line x1="1100" y1="0" x2="1100" y2="420"/>
+    <line x1="0" y1="80" x2="1200" y2="80"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="280" x2="1200" y2="280"/>
+    <line x1="0" y1="380" x2="1200" y2="380"/>
+  </g>
+
+  <!-- Top Badge -->
+  <g transform="translate(60, 48)">
+    <rect width="210" height="28" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <circle cx="16" cy="14" r="5" fill="#38bdf8"/>
+    <text x="30" y="18" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" letter-spacing="1.2">HUMAN-ERA SEARCH SKILL</text>
+  </g>
+
+  <!-- Title & Tagline -->
+  <text x="60" y="125" fill="url(#brand-grad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="800" letter-spacing="-1.5">
+    deslop-search
+  </text>
+  <text x="60" y="165" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" font-weight="400">
+    Split-Horizon Temporal Firewall &amp; Anti-Slop AI Agent Skill
+  </text>
+
+  <!-- Split-Horizon Graphic Display (Two Cards) -->
+  <g transform="translate(60, 205)">
+    <!-- Lane A Card: Canonical Pre-2023 -->
+    <rect x="0" y="0" width="510" height="150" rx="12" fill="url(#canon-grad)" stroke="#0284c7" stroke-width="1.5" stroke-opacity="0.6"/>
+    <g transform="translate(24, 28)">
+      <circle cx="8" cy="8" r="6" fill="#38bdf8" filter="url(#glow)"/>
+      <text x="24" y="12" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" letter-spacing="1">LANE A • [HORIZONTE CANÔNICO: PRÉ-2023]</text>
+      <text x="24" y="38" fill="#e2e8f0" font-family="'JetBrains Mono', Consolas, monospace" font-size="13" font-weight="600">after:2010 before:2023</text>
+      <text x="24" y="60" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">
+        Reddit • Stack Overflow • Archived GitHub • Indie Blogs
+      </text>
+      <text x="24" y="84" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">
+        ✓ 100% Acervo Humano Autêntico • Zero Alucinação de SEO
+      </text>
+    </g>
+
+    <!-- Center Lightning / Split Bar -->
+    <g transform="translate(528, 45)">
+      <rect x="0" y="0" width="24" height="60" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <text x="12" y="36" fill="#f43f5e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" text-anchor="middle">⇄</text>
+    </g>
+
+    <!-- Lane B Card: Contemporary Post-2023 -->
+    <rect x="570" y="0" width="510" height="150" rx="12" fill="url(#contemp-grad)" stroke="#8b5cf6" stroke-width="1.5" stroke-opacity="0.6"/>
+    <g transform="translate(594, 28)">
+      <circle cx="8" cy="8" r="6" fill="#c084fc" filter="url(#glow)"/>
+      <text x="24" y="12" fill="#c084fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" letter-spacing="1">LANE B • [HORIZONTE CONTEMPORÂNEO: PÓS-2023]</text>
+      <text x="24" y="38" fill="#e2e8f0" font-family="'JetBrains Mono', Consolas, monospace" font-size="13" font-weight="600">after:2023 + blocklist.json</text>
+      <text x="24" y="60" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">
+        Auditoria Anti-Slop O(N) • Depreciações • CVEs Recentes
+      </text>
+      <text x="24" y="84" fill="#c084fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">
+        ✓ Purga 60+ Fazendas de IA • Alerta Conflitos e Quebras
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent Stripe -->
+  <rect x="0" y="416" width="1200" height="4" fill="url(#diff-grad)"/>
+</svg>

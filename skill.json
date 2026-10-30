@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "deslop-search",
+  "version": "1.1.0",
+  "displayName": "Deslop Search — Human-Era Web Filter, Split-Horizon & Anti-Slop Engine",
+  "description": "Intercepts web search queries to strip synthetic SEO farms and LLM filler via temporal dorks (before:2023, after:2010), parallel Split-Horizon comparative search (Pre-2023 Canonical vs Post-2023 Audited), curated community routing, and deterministic heuristic slop scoring.",
+  "license": "MIT",
+  "author": "Deslop Search Contributors",
+  "homepage": "https://github.com/your-org/deslop-search",
+  "platforms": [
+    "antigravity",
+    "claude-code",
+    "cursor",
+    "openai-agents",
+    "gemini-tools",
+    "mcp"
+  ],
+  "entrypoints": {
+    "skillMarkdown": "./SKILL.md",
+    "cli": {
+      "node": "./dist/cli.js",
+      "python": "python -m deslop_search"
+    },
+    "typescript": "./dist/index.js",
+    "mcpTools": "./dist/mcp-tools.js",
+    "python": "./python/deslop_search/__init__.py"
+  },
+  "dataFiles": {
+    "blocklist": "./data/blocklist.json",
+    "sources": "./data/sources.json",
+    "slopLexicon": "./data/slop-lexicon.json"
+  },
+  "tools": [
+    {
+      "name": "deslop_build_query",
+      "description": "Transforms a raw search query into a clean, operator-budgeted search dork with temporal bounds (default after:2010 before:2023), spam farm exclusions (-site:...), community source routing, and optional dual Split-Horizon compilation (split_horizon=true).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Raw user or agent search query."
+          },
+          "split_horizon": {
+            "type": "boolean",
+            "default": false,
+            "description": "When true, compiles parallel Lane A ([HORIZONTE CANÔNICO: PRÉ-2023] routed to Reddit/SO/GitHub/Indie Blogs) and Lane B ([HORIZONTE CONTEMPORÂNEO: PÓS-2023] guarded by blocklist.json + anti-slop filter) plus a Differential & Conflicts analysis."
+          },
+          "era": {
+            "type": "string",
+            "enum": ["human-classic", "pre-gpt4", "archival", "modern-curated", "none"],
+            "default": "human-classic",
+            "description": "Temporal boundary preset when split_horizon is false."
+          },
+          "profile": {
+            "type": "string",
+            "enum": ["none", "all_community", "discussions", "qa", "code", "blogs", "forums"],
+            "default": "none",
+            "description": "Optional curated human community routing profile."
+          },
+          "engine": {
+            "type": "string",
+            "enum": ["google", "duckduckgo", "brave", "kagi", "searxng", "bing"],
+            "default": "google",
+            "description": "Target search engine (determines operator token budget and URL parameters such as udm=14)."
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "deslop_split_horizon",
+      "description": "Executes or audits a Dual Temporal Split-Horizon search confronting [HORIZONTE CANÔNICO: PRÉ-2023] human literature against [HORIZONTE CONTEMPORÂNEO: PÓS-2023] audited recent data, concluding with a [DIFERENCIAL E CONFLITOS] divergence block.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Technical or journalistic investigation query."
+          },
+          "split_horizon": {
+            "type": "boolean",
+            "default": true,
+            "description": "Explicit Split-Horizon toggle (enabled by default on this tool)."
+          },
+          "live": {
+            "type": "boolean",
+            "default": true,
+            "description": "When true (async handler), dispatches parallel queries across Pre-2023 and Post-2023 archives."
+          },
+          "cutoff_year": {
+            "type": "integer",
+            "default": 2023,
+            "description": "Temporal boundary year separating Canonical Lane A from Contemporary Lane B."
+          },
+          "limit_per_source": {
+            "type": "integer",
+            "default": 4
+          },
+          "canonical_results": {
+            "type": "array",
+            "description": "Optional pre-fetched Lane A results to audit and compare offline.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": { "type": "string" },
+                "url": { "type": "string" },
+                "snippet": { "type": "string" },
+                "content": { "type": "string" }
+              },
+              "required": ["title", "url"]
+            }
+          },
+          "contemporary_results": {
+            "type": "array",
+            "description": "Optional pre-fetched Lane B results to audit and compare offline.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": { "type": "string" },
+                "url": { "type": "string" },
+                "snippet": { "type": "string" },
+                "content": { "type": "string" }
+              },
+              "required": ["title", "url"]
+            }
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "deslop_classify_text",
+      "description": "Scores snippet or webpage text (0.0 to 1.0) for synthetic AI SEO slop using lexical corporate jargon (EN/PT-BR), symmetrical Bold-Colon listicles, paragraph uniformity, sentence burstiness, and technical density.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Article body or search snippet to inspect."
+          },
+          "title": {
+            "type": "string",
+            "description": "Optional page title for SEO year-bait detection."
+          },
+          "url": {
+            "type": "string",
+            "description": "Optional page URL to check against known scraper/translation clone blocklists and trusted human domains."
+          }
+        },
+        "required": ["text"]
+      }
+    },
+    {
+      "name": "deslop_filter_results",
+      "description": "Filters and re-ranks a batch of raw search results, discarding blocked scraper domains and high-slop snippets while boosting authentic community threads and dense technical posts.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": { "type": "string" },
+                "url": { "type": "string" },
+                "snippet": { "type": "string" },
+                "content": { "type": "string" }
+              },
+              "required": ["title", "url"]
+            }
+          },
+          "maxSlopScore": {
+            "type": "number",
+            "default": 0.59,
+            "description": "Maximum allowed slop score (0.0-1.0) before a result is dropped."
+          }
+        },
+        "required": ["results"]
+      }
+    }
+  ]
+}

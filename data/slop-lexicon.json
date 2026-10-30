@@ -1,0 +1,96 @@
+{
+  "version": "1.0.0",
+  "description": "Multilingual (EN + PT-BR) heuristic signatures for detecting synthetic SEO articles, corporate LLM jargon, and symmetrical filler.",
+  "thresholds": {
+    "suspicious": 0.35,
+    "slop": 0.60
+  },
+  "weights": {
+    "jargonPhrase": 0.14,
+    "openingClichedHook": 0.24,
+    "closingSummaryTemplate": 0.18,
+    "boldColonListicle": 0.22,
+    "uniformParagraphSymmetry": 0.18,
+    "lowSentenceBurstiness": 0.14,
+    "emDashOveruse": 0.10,
+    "seoYearBait": 0.16,
+    "fakeTranslationArtifact": 0.22,
+    "highTechnicalDensityBonus": -0.22
+  },
+  "phrases": {
+    "en": [
+      "in today's fast-paced digital",
+      "in today's digital landscape",
+      "in the ever-evolving world of",
+      "ever-evolving landscape",
+      "delve into",
+      "delving into",
+      "let's dive deep into",
+      "without further ado, let's",
+      "rich tapestry",
+      "a testament to",
+      "unlock the full potential",
+      "unleash the power of",
+      "harnessing the power of",
+      "game-changer",
+      "seamless integration",
+      "it is important to note that",
+      "it's worth noting that",
+      "crucial to understand that",
+      "comprehensive guide",
+      "ultimate guide to",
+      "look no further",
+      "navigating the complexities of",
+      "demystifying",
+      "empowering developers to",
+      "elevate your workflow",
+      "fostering innovation",
+      "paradigm shift",
+      "robust and scalable solution",
+      "in conclusion, whether you are",
+      "by following these best practices, you can ensure"
+    ],
+    "pt": [
+      "na era digital de hoje",
+      "no cenário digital atual",
+      "em constante evolução",
+      "vamos mergulhar fundo",
+      "aprofundar nos detalhes",
+      "rica tapeçaria",
+      "é importante destacar que",
+      "vale ressaltar que",
+      "relevante destacar",
+      "desbloquear todo o potencial",
+      "divisor de águas",
+      "integração perfeita e contínua",
+      "guia definitivo e abrangente",
+      "não procure mais",
+      "desmistificando",
+      "além disso, por outro lado",
+      "em conclusão, seja você um",
+      "em suma, compreender",
+      "capacitando desenvolvedores a",
+      "alavancar seus resultados"
+    ]
+  },
+  "openingHooks": [
+    "^(in today's|na era digital|no mundo acelerado|have you ever wondered how|você já se perguntou como|when it comes to modern)",
+    "^(welcome to our (comprehensive|ultimate) guide|bem-vindo ao nosso guia (completo|definitivo))"
+  ],
+  "closingHooks": [
+    "(in conclusion|to sum up|wrapping up|em conclusão|em suma|concluindo),? (whether you're|whether you are|seja você|esperamos que este guia)",
+    "final thoughts:?\\s+(as we have explored|como vimos ao longo deste artigo)"
+  ],
+  "seoTitleBait": [
+    "\\[(updated|atualizado)\\s*202[4-9]\\]",
+    "\\(202[4-9]\\s*(guide|edition|update|atualizado)\\)",
+    "^\\d+\\s+best\\s+.+\\s+in\\s+202[4-9]\\s*(ranked|tested|reviewed)?$"
+  ],
+  "fakeTranslationMarkers": [
+    "esta resposta foi traduzida automaticamente",
+    "fonte original:\\s*stackoverflow",
+    "translated from english by",
+    "direitos autorais atribuídos ao autor original",
+    "licenciado sob cc by-sa 2\\.5.*traduzido"
+  ]
+}

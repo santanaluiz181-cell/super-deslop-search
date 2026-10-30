@@ -1,0 +1,144 @@
+{
+  "version": "1.0.0",
+  "description": "Curated human-first community repositories, technical Q&A networks, independent forums, and high-density engineering blogs.",
+  "channels": {
+    "reddit": {
+      "label": "Authentic Reddit Discussions",
+      "sites": [
+        "reddit.com"
+      ],
+      "dorkHints": [
+        "site:reddit.com"
+      ]
+    },
+    "stackoverflow": {
+      "label": "Stack Exchange Technical Q&A Network",
+      "sites": [
+        "stackoverflow.com",
+        "serverfault.com",
+        "superuser.com",
+        "unix.stackexchange.com",
+        "askubuntu.com",
+        "dba.stackexchange.com",
+        "security.stackexchange.com",
+        "softwareengineering.stackexchange.com"
+      ],
+      "dorkHints": [
+        "site:stackoverflow.com",
+        "site:unix.stackexchange.com",
+        "site:serverfault.com"
+      ]
+    },
+    "github": {
+      "label": "GitHub Issues, Discussions, Gists & Archived Code",
+      "sites": [
+        "github.com",
+        "gist.github.com",
+        "gitlab.com",
+        "codeberg.org",
+        "sr.ht"
+      ],
+      "dorkHints": [
+        "site:github.com",
+        "site:gist.github.com"
+      ]
+    },
+    "hackernews": {
+      "label": "Hacker News & Lobste.rs Peer-Reviewed Threads",
+      "sites": [
+        "news.ycombinator.com",
+        "lobste.rs"
+      ],
+      "dorkHints": [
+        "site:news.ycombinator.com",
+        "site:lobste.rs"
+      ]
+    },
+    "indie_forums": {
+      "label": "Independent Technical Forums & Mailing Lists",
+      "sites": [
+        "lwn.net",
+        "archlinux.org",
+        "gentoo.org",
+        "freebsd.org",
+        "discourse.llvm.org",
+        "users.rust-lang.org",
+        "discuss.python.org",
+        "forum.golangbridge.org",
+        "elixirforum.com"
+      ],
+      "urlPatterns": [
+        "inurl:showthread.php",
+        "inurl:viewtopic.php"
+      ]
+    },
+    "engineering_blogs": {
+      "label": "High-Density Human Engineering Blogs",
+      "sites": [
+        "danluu.com",
+        "jvns.ca",
+        "brandur.org",
+        "eli.thegreenplace.net",
+        "aphyr.com",
+        "kalzumeus.com",
+        "rachelbythebay.com",
+        "nullprogram.com",
+        "ciechanow.ski",
+        "fasterthanli.me",
+        "matklad.github.io",
+        "lexi-lambda.github.io",
+        "overreacted.io",
+        "martinfowler.com",
+        "pragmaticengineer.com",
+        "arp242.net",
+        "research.swtch.com",
+        "simonwillison.net"
+      ]
+    }
+  },
+  "profiles": {
+    "all_community": [
+      "reddit.com",
+      "stackoverflow.com",
+      "news.ycombinator.com",
+      "lobste.rs",
+      "github.com"
+    ],
+    "discussions": [
+      "reddit.com",
+      "news.ycombinator.com",
+      "lobste.rs"
+    ],
+    "qa": [
+      "stackoverflow.com",
+      "serverfault.com",
+      "superuser.com",
+      "unix.stackexchange.com"
+    ],
+    "code": [
+      "github.com",
+      "gist.github.com",
+      "gitlab.com",
+      "codeberg.org"
+    ],
+    "blogs": [
+      "danluu.com",
+      "jvns.ca",
+      "brandur.org",
+      "eli.thegreenplace.net",
+      "aphyr.com",
+      "rachelbythebay.com",
+      "nullprogram.com",
+      "fasterthanli.me",
+      "matklad.github.io",
+      "research.swtch.com"
+    ],
+    "forums": [
+      "lwn.net",
+      "bbs.archlinux.org",
+      "users.rust-lang.org",
+      "discuss.python.org",
+      "elixirforum.com"
+    ]
+  }
+}
